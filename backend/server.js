@@ -3,8 +3,9 @@ const express = require('express')
 
 const app = express()
 
+const PORT = 8080;
+
 app.get('/', (req, res) => {
-    console.log("Hello from")
     res.status(200).send("Hi")
 })
 
@@ -12,4 +13,7 @@ app.get('/', (req, res) => {
 const serviceRequestRouter = require('./routes/serviceRequests')
 app.use('/serviceRequests', serviceRequestRouter)
 
-app.listen(3000)
+const customersRequestRouter = require('./routes/customers')
+app.use('/customers', customersRequestRouter)
+
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
