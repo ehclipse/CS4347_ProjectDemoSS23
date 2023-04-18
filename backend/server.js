@@ -16,4 +16,7 @@ app.use('/serviceRequests', serviceRequestRouter)
 const customersRequestRouter = require('./routes/customers')
 app.use('/customers', customersRequestRouter)
 
+const employeesRequestRouter = require('./routes/employees')
+app.use('/employees', employeesRequestRouter)
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
